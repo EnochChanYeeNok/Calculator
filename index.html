@@ -20,12 +20,13 @@
 
     <!-- New container for canvas and value calculator -->
     <div id="canvasContainer">
-        <canvas id="graphCanvas" width="700" height="500"></canvas>
+        <canvas id="graphCanvas" width="700" height="500" onmousemove="showCoordinates(event)"></canvas>
 
         <div id="valueCalculator">
             <input type="number" id="xValue" placeholder="Enter x value">
             <button onclick="calculateYValue()">Calculate Y</button>
             <p id="yValueDisplay"></p>
+            <p id="gradientDisplay"></p> <!-- Added for displaying gradient -->
         </div>
     </div>
 
