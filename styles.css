@@ -1,33 +1,113 @@
+/* styles.css */
 
+/* Apply a dark background to the body */
 body {
+    background-color: #2c2c2c;
+    color: #f0f0f0;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Center the main title */
+h1 {
     text-align: center;
+    margin-bottom: 40px;
+    color: #ffffff;
 }
+
+/* Style the calculator section */
 #calculator {
-    margin: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
-#equation {
-    width: 400px;
+
+#calculator input[type="text"] {
     padding: 10px;
     font-size: 16px;
+    width: 300px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #3c3c3c;
+    color: #f0f0f0;
+    margin-right: 10px;
 }
-#graphCanvas {
-    border: 1px solid #ccc;
-    cursor: grab;
+
+#calculator button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-#graphCanvas:active {
-    cursor: grabbing;
+
+#calculator button:hover {
+    background-color: #45a049;
 }
-/* Style for the value calculator */
-#valueCalculator {
+
+/* Style the canvas container and value calculator */
+#canvasContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
     margin-top: 20px;
 }
-#xValue {
-    width: 200px;
-    padding: 5px;
+
+/* Style the graph canvas */
+#graphCanvas {
+    background-color: #ffffff;
+    border: 1px solid #555;
+    border-radius: 4px;
+}
+
+/* Style the value calculator section */
+#valueCalculator {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#valueCalculator input[type="number"] {
+    padding: 10px;
     font-size: 16px;
+    width: 200px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #3c3c3c;
+    color: #f0f0f0;
+    margin-bottom: 10px;
 }
+
+#valueCalculator button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #008CBA;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#valueCalculator button:hover {
+    background-color: #007bb5;
+}
+
 #yValueDisplay {
-    font-weight: bold;
     margin-top: 10px;
+    font-size: 18px;
+    color: #ffeb3b;
 }
+
+/* Style the hover information */
+h5 {
+    text-align: center;
+    color: #dddddd;
+    margin-top: 20px;
+}
+
