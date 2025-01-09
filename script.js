@@ -18,10 +18,18 @@ function drawGraph() {
     // Get the user-entered equation
     const equationInput = document.getElementById('equation').value;
 
-    // Compile the equation
+    // Compile the equation and its derivative
     try {
         equation = math.compile(equationInput);
-        derivativeEquation = math.derivative(equationInput, 'x').compile(); // Compile derivative
+        const derivative = math.derivative(equationInput, 'x');
+        derivativeEquation = derivative.compile(); // Compile derivative
+
+        // Extract the derivative expression as a string
+        const derivativeExpr = derivative.toString();
+
+        // Display the gradient equation
+        const gradientEquationDisplay = document.getElementById('gradientEquationDisplay');
+        gradientEquationDisplay.textContent = `Gradient Equation: ${derivativeExpr}`;
     } catch (error) {
         alert('Invalid equation. Please check your input.');
         return;
@@ -140,7 +148,7 @@ function calculateYValue() {
 
     // Display the gradient value with two decimal places
     const gradientDisplay = document.getElementById('gradientDisplay');
-    gradientDisplay.textContent = `Gradient (dy/dx) = ${dy.toFixed(2)}`;
+    gradientDisplay.textContent = `Gradient (dy/dx) at x = ${x.toFixed(2)} is ${dy.toFixed(2)}`;
 
     // Adjust the graph view to center on (x, y)
     const rangeX = xMax - xMin;
