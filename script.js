@@ -181,7 +181,7 @@ function drawTangentLine(x, y, dy) {
 
     // Draw the tangent line
     ctx.beginPath();
-    ctx.strokeStyle = 'red';
+    ctx.strokeStyle = 'green'; // Changed to green for better visibility
     ctx.lineWidth = 2;
     ctx.moveTo(pixelX1, pixelY1);
     ctx.lineTo(pixelX2, pixelY2);
@@ -325,9 +325,9 @@ function showCoordinates(event) {
         const coordText = `(${closestPoint.x.toFixed(2)}, ${closestPoint.y.toFixed(2)})`;
         ctx.fillText(coordText, closestPoint.pixelX + 10, closestPoint.pixelY - 10);
 
-        // Optionally, display the gradient at this point
+        // Evaluate the derivative at the closest point
+        let dy;
         if (derivativeEquation) {
-            let dy;
             try {
                 dy = derivativeEquation.evaluate({ x: closestPoint.x });
             } catch (error) {
@@ -338,7 +338,7 @@ function showCoordinates(event) {
         }
 
         // Draw the tangent line at this point
-        if (derivativeEquation) {
+        if (derivativeEquation && typeof dy === 'number') {
             drawTangentLine(closestPoint.x, closestPoint.y, dy);
         }
     } else {
